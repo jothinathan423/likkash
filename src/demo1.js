@@ -46,7 +46,6 @@ const resetting=()=>{
       }
   })
 }
-// Replace the example code for sending a form submission request with this code inside the existing handleSubmit function
 
 const confirm = async (event) => {
   event.preventDefault();
@@ -124,7 +123,7 @@ const handleSubmit = async (event) => {
       if (response.status === 200) {
         console.log('Data submitted successfully');
         alert("Information has been successfully submitted");
-        resetting(); // Reset the form after successful submission
+        resetting(); 
       } else {
         console.error('Error submitting data:', response.statusText);
         alert("Failed to submit information");

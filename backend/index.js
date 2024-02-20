@@ -2,13 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
-
 const app = express();
 const port = 3001;
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
+
 
 const pool = mysql.createPool({
     connectionLimit: 10,
@@ -17,6 +16,7 @@ const pool = mysql.createPool({
     password: 'Jothi422@',
     database: 'setaf'
 });
+
 
 app.post('/create', async (req, res) => {
     try {
@@ -49,6 +49,7 @@ app.post('/create', async (req, res) => {
         res.status(500).send('Error submitting data');
     }
 });
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
